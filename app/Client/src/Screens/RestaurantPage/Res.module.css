@@ -1,0 +1,28 @@
+.bg {
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+}
+
+.main {
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.heading {
+  padding: 10px;
+  border-radius: 10px;
+  /* -webkit-box-shadow: 11px 10px 18px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 10px 18px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 11px 8px 18px -4px rgba(0, 0, 0, 0.75); */
+  background-color: lightgrey;
+}
+
+.menu {
+  padding: 10px;
+  background-color: rgb(214, 236, 248);
+  border-radius: 10px;
+  /* -webkit-box-shadow: 11px 10px 18px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 10px 18px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 11px 8px 18px -4px rgba(0, 0, 0, 0.75); */
+}
