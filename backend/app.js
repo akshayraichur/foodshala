@@ -6,7 +6,6 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-// "DB_CONNECT": "mongodb+srv://akshayraichur:k8u1httkCmtE0Qxm@project0-ajl4y.mongodb.net/foodshala",
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
