@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getAllRestaurants = () => {
-  return axios.get(`https://foodshalaapi.herokuapp.com/api/restaurant/get-all`)
+  return axios.get(`${process.env.REACT_APP_API_URL}/restaurant/get-all`)
     .then(
       (result) => result,
     ).catch((err) => err);
@@ -9,7 +9,7 @@ export const getAllRestaurants = () => {
 
 export const getARestaurant = (resid) => {
   return axios.get(
-    `https://foodshalaapi.herokuapp.com/api/restaurant/get/${resid}`,
+    `${process.env.REACT_APP_API_URL}/restaurant/get/${resid}`,
   ).then(
     (result) => result,
   ).catch((err) => err);
@@ -17,7 +17,7 @@ export const getARestaurant = (resid) => {
 
 export const findItemsFromARestaurant = (resid) => {
   return axios.get(
-    `https://foodshalaapi.herokuapp.com/api/restaurant/get-menu/${resid}`,
+    `${process.env.REACT_APP_API_URL}/restaurant/get-menu/${resid}`,
   )
     .then(
       (data) => data,
@@ -26,7 +26,7 @@ export const findItemsFromARestaurant = (resid) => {
 
 export const addItem = (resid, values, access_token) => {
   return axios.post(
-    `https://foodshalaapi.herokuapp.com/api/restaurant/add-item/${resid}`,
+    `${process.env.REACT_APP_API_URL}/restaurant/add-item/${resid}`,
     values,
     {
       headers: {
@@ -38,7 +38,7 @@ export const addItem = (resid, values, access_token) => {
 
 export const getOrders = (access_token) => {
   return axios.get(
-    `https://foodshalaapi.herokuapp.com/api/restaurant/view-orders`,
+    `${process.env.REACT_APP_API_URL}/restaurant/view-orders`,
     { headers: { Authorization: `Bearer ${access_token}` } },
   ).then((data) => data.data).catch((err) => err);
 };

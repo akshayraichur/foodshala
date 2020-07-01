@@ -2,7 +2,7 @@ import Axios from "axios";
 
 export const restaurantSignup = (values) => {
   return Axios.post(
-    `https://foodshalaapi.herokuapp.com/api/restaurant/auth/register`,
+    `${process.env.REACT_APP_API_URL}/restaurant/auth/register`,
     values,
   ).then(
     (data) => data,
@@ -11,7 +11,7 @@ export const restaurantSignup = (values) => {
 
 export const customerSignup = (values) => {
   return Axios.post(
-    `https://foodshalaapi.herokuapp.com/api/customer/auth/register`,
+    `${process.env.REACT_APP_API_URL}/customer/auth/register`,
     values,
   )
     .then((data) => data.data).catch((err) => err);
@@ -19,7 +19,7 @@ export const customerSignup = (values) => {
 
 export const customerLogin = (values) => {
   return Axios.post(
-    `https://foodshalaapi.herokuapp.com/api/customer/auth/login`,
+    `${process.env.REACT_APP_API_URL}/customer/auth/login`,
     values,
   )
     .then((data) => data.data).catch((err) => err);
@@ -27,7 +27,7 @@ export const customerLogin = (values) => {
 
 export const restaurantLogin = (values) => {
   return Axios.post(
-    `https://foodshalaapi.herokuapp.com/api/restaurant/auth/login`,
+    `${process.env.REACT_APP_API_URL}/restaurant/auth/login`,
     values,
   )
     .then((data) => data.data).catch((err) => err);
