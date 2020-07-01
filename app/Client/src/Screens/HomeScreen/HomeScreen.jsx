@@ -7,12 +7,41 @@ import { getAllRestaurants } from "../../Helper/Restaurant";
 
 export const HomeScreen = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getAllRestaurants().then((data) => {
       setRestaurants(data.data.restaurants);
+      setIsLoading(false);
     }).catch((err) => console.log(err));
   }, []);
+
+  const renderContent = () => {
+    return restaurants.map((re, index) => {
+      return <Grid item xs={12} md={4} key={re._id}>
+        <Card
+          name={re.restaurantName}
+          email={re.email}
+          link={re._id}
+          description={re.description}
+        />
+      </Grid>;
+    });
+  };
+
+  const unLoadedScreen = () => {
+    return (
+      <>
+        <Grid container item xs={12} md={12}>
+          <Grid item xs={12}>
+            <div className="d-flex justify-content-center">
+              <h3 className="h3">Fetching data from server, hang in there!</h3>
+            </div>
+          </Grid>
+        </Grid>
+      </>
+    );
+  };
 
   return (
     <div>
@@ -22,11 +51,7 @@ export const HomeScreen = () => {
           <Grid item xs={12}>
             <h2 className="h2 text-center mt-5 pt-5">Restaurants Availiable</h2>
           </Grid>
-          {restaurants.map((re, index) => {
-            return <Grid item xs={4} key={re._id}>
-              <Card name={re.restaurantName} email={re.email} link={re._id} />
-            </Grid>;
-          })}
+          {isLoading ? unLoadedScreen() : renderContent()}
         </Grid>
       </Container>
     </div>

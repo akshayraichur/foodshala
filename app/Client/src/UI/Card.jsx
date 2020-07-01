@@ -22,8 +22,7 @@ export const Card = (props) => {
             4.5
           </span>
           <p className="card-text mt-2">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {props.description}
           </p>
         </div>
       </div>

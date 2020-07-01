@@ -4,13 +4,13 @@ import { AuthContext } from "../Context/AuthContext";
 import { orderFood } from "../Helper/Customer";
 import { useState } from "react";
 import { Message } from "./Message";
-import { Link } from "react-router-dom";
 
 export const ItemCard = (props) => {
   const { resid, itemId } = props;
   const { user, access_token } = useContext(AuthContext);
 
   const [error, setError] = useState(null);
+  // eslint-disable-next-line
   const [success, setSuccess] = useState(false);
 
   const { id } = user;

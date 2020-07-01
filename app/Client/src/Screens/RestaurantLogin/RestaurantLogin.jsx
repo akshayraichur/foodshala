@@ -36,10 +36,10 @@ export const RestaurantLogin = () => {
         setError(data.err);
         setSuccess(false);
       } else {
-        setUser(data.user);
-        setIsAuthenticated(true);
         localStorage.setItem("access_token", data.token);
         localStorage.setItem("restaurant", JSON.stringify(data.user));
+        setUser(data.user);
+        setIsAuthenticated(true);
         setSuccess(true);
         history.push("/");
       }

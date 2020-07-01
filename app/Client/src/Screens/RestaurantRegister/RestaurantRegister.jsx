@@ -34,7 +34,7 @@ export const RestaurantRegister = () => {
         return;
       }
       setSuccess(true);
-      history.push("/");
+      history.push("/restaurant/login");
     }).catch((err) => console.log(err));
   };
 

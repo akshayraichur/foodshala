@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Button } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import classes from "./Res.module.css";
 import { ItemCard } from "../../UI/ItemCard";
 import { useParams } from "react-router";
@@ -9,13 +9,9 @@ import {
   getARestaurant,
   findItemsFromARestaurant,
 } from "../../Helper/Restaurant";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../Context/AuthContext";
 
 export const RestaurantPage = () => {
   const { resid } = useParams();
-  const { user } = useContext(AuthContext);
 
   const [restaurant, setRestaurant] = useState({});
   const [items, setItems] = useState([]);
@@ -68,19 +64,6 @@ export const RestaurantPage = () => {
                     No Menu items added yet!
                   </h3>
                   <br />
-                  {user.role === 1
-                    ? (
-                      <Link to="/restaurant/add-item">
-                        <Button
-                          variant="outlined"
-                          color="primary"
-                          className="pr-4"
-                        >
-                          Add item here
-                        </Button>
-                      </Link>
-                    )
-                    : null}
                 </div>
               </>)
               : (<h3 className="h3 text-center">Menu</h3>)}
