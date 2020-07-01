@@ -30,17 +30,16 @@ export const HomeScreen = () => {
   };
 
   const unLoadedScreen = () => {
-    return (
-      <>
-        <Grid container item xs={12} md={12}>
-          <Grid item xs={12}>
-            <div className="d-flex justify-content-center">
-              <h3 className="h3">Fetching data from server, hang in there!</h3>
-            </div>
-          </Grid>
-        </Grid>
-      </>
-    );
+    return [1, 2, 3, 4, 5, 6].map((re, index) => {
+      return <Grid item xs={12} md={4} key={re._id}>
+        <Card
+          name={"Loading......"}
+          email={"Loading......"}
+          link={""}
+          description={"Hang in there!"}
+        />
+      </Grid>;
+    });
   };
 
   return (
